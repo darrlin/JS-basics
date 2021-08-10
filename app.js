@@ -31,12 +31,25 @@ const personalMovirDB = {
     privat: false
 };
 
-const a = prompt('Один из последних просомтренных вами фильмов?', ''),
-      b = +prompt('На сколько оцените его?', ''),
-      c = prompt('Один из последних просомтренных вами фильмов?', ''),
-      d = +prompt('На сколько оцените его?', '');
+for (let i = 0; i<2; i++) {
+    const a = prompt('Один из последних просомтренных вами фильмов?', ''),
+          b = +prompt('На сколько оцените его?', '');
 
-personalMovirDB.movies[a] = b;
-personalMovirDB.movies[c] = d;
+    if(a != null && b != null && a != '' && b != '' && a.length < 50){
+        personalMovirDB.movies[a] = b;
+        console.log('done');
+    } else {
+        console.log('error');
+        i--;
+    }
+}
 
 console.log(personalMovirDB);
+
+if (personalMovirDB.count < 10){
+    console.log('Просмотрено довольно мало фильмов.');
+} else if (personalMovirDB.count < 10 && personalMovirDB.count < 30){
+    console.log('Просмотренно среднее количество фильмов.');
+} else if (personalMovirDB.count > 30){
+    console.log('Да вы киноман!');
+} else {console.log('Произошла ошибка.');}
