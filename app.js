@@ -20,7 +20,7 @@
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-let numberOfFilms;
+/*let numberOfFilms;
 
 function start(){
     numberOfFilms = +prompt('Сколько фильмов вы посмотрели?', '');
@@ -89,7 +89,7 @@ writeYourGenres();
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/*const fruit = "Some fruit";
+const fruit = "Some fruit";
 
 console.log(fruit.indexOf('fruit'));
 
@@ -98,4 +98,53 @@ console.log(fruit.slice(0, 4));
 console.log(fruit.substring(0, 4)); //не поддерживает отриц. значения и первое число может быть больше вт
 
 console.log(fruit.substr(0, 4)); //второй аргумент - длинна 
-*/
+
+
+function learnJS(lang, callback){
+    console.log(`I'm learning: ${lang}`);
+    callback();
+}
+
+function done(){
+    console.log('I finished this learn');
+}
+
+learnJS('JavaScript', done);*/
+
+const options = {
+    name: 'test',
+    width: 1024,
+    height: 1024,
+    colors: {
+        border: 'black',
+        bg: 'yellow'
+    },
+    makeTest: function(){
+        console.log('Test');
+    }
+};
+
+options.makeTest();
+
+const {border, bg} = options.colors;
+console.log(border);
+
+delete options.name;
+
+console.log(options);
+
+let count = 0;
+for (let key in options){
+    if (typeof(options[key]) === 'object'){
+        for (let i in options[key]){
+            console.log(`Свойство ${i} имеет значение ${options[key][i]}`);
+            count++;
+        }
+    } else {
+        console.log(`Свойство ${key} имеет значение ${options[key]}`);  
+        count++;
+    }
+}
+console.log(count);
+
+console.log(Object.keys(options).length);
