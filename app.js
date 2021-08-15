@@ -109,7 +109,7 @@ function done(){
     console.log('I finished this learn');
 }
 
-learnJS('JavaScript', done);*/
+learnJS('JavaScript', done);
 
 const options = {
     name: 'test',
@@ -147,4 +147,51 @@ for (let key in options){
 }
 console.log(count);
 
-console.log(Object.keys(options).length);
+console.log(Object.keys(options).length);*/
+
+// const arr = [1, 2, 3, 4, 8];
+
+//arr.pop(); //убирает с конца елемент
+// arr.push(10); //добавляет в конец
+
+// console.log(arr);
+
+// for ( let i = 0; i < arr.length; i++){
+//     console.log(arr[i]);
+// }
+
+// arr.forEach(function(item, i, arr){
+//     console.log(`${i}: ${item} внутри массива ${arr}`);
+// });
+
+// const str = prompt('','');
+// const products = str.split(', ');
+
+// console.log(products);
+// products.sort();
+// console.log(products.join('; '));
+
+// const arr = [1, 28, 3, 4, 8];
+// arr.sort(compareNum);
+// console.log(arr);
+
+// function compareNum(a, b){
+//     return a - b;
+// }
+
+// let a = 5,
+//     b = a;
+
+// b = b + 5;
+
+// console.log(b);
+// console.log(a);
+
+const obj = {
+    a: 5,
+    b: 1
+};
+
+const copy = obj; //передает ссылку
+
+copy.a = 10;
