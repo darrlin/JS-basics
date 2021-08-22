@@ -18,136 +18,65 @@
 
 //console.log(4 + +'5');
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// const fruit = "Some fruit";
 
-/*let numberOfFilms;
+// console.log(fruit.indexOf('fruit'));
 
-function start(){
-    numberOfFilms = +prompt('Сколько фильмов вы посмотрели?', '');
+// console.log(fruit.slice(0, 4));
 
-    while(numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)){
-        numberOfFilms = +prompt('Сколько фильмов вы посмотрели?', '');
-    }
-}
+// console.log(fruit.substring(0, 4)); //не поддерживает отриц. значения и первое число может быть больше вт
 
-start();
-
-const personalMovieDB = {
-    count: numberOfFilms,
-    movies: {},
-    actors: {},
-    genres: [],
-    privat: false
-};
-
-function rememberMyFilms(){
-    for (let i = 0; i<2; i++) {
-        const a = prompt('Один из последних просомтренных вами фильмов?', ''),
-              b = +prompt('На сколько оцените его?', '');
-    
-        if(a != null && b != null && a != '' && b != '' && a.length < 50){
-            personalMovieDB.movies[a] = b;
-            console.log('done');
-        } else {
-            console.log('error');
-            i--;
-        }
-    }
-}
-
-rememberMyFilms();
-
-console.log(personalMovieDB);
-
-function detectPersLevel(){
-    if (personalMovieDB.count < 10){
-        console.log('Просмотрено довольно мало фильмов.');
-    } else if (personalMovieDB.count < 10 && personalMovieDB.count < 30){
-        console.log('Просмотренно среднее количество фильмов.');
-    } else if (personalMovieDB.count > 30){
-        console.log('Да вы киноман!');
-    } else {console.log('Произошла ошибка.');}
-}
-
-detectPersLevel();
-
-function showMyDB(hidden){
-    if(!hidden){
-        console.log(personalMovieDB);
-    }
-}
-
-showMyDB(personalMovieDB.privat);
-
-function writeYourGenres(){
-    for(let i = 1; i <= 3; i++){
-        personalMovieDB.genres[i - 1] = prompt(`Ваш любимый жанр под номером ${i}`);
-    }
-}
-
-writeYourGenres();
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-const fruit = "Some fruit";
-
-console.log(fruit.indexOf('fruit'));
-
-console.log(fruit.slice(0, 4));
-
-console.log(fruit.substring(0, 4)); //не поддерживает отриц. значения и первое число может быть больше вт
-
-console.log(fruit.substr(0, 4)); //второй аргумент - длинна 
+// console.log(fruit.substr(0, 4)); //второй аргумент - длинна 
 
 
-function learnJS(lang, callback){
-    console.log(`I'm learning: ${lang}`);
-    callback();
-}
+// function learnJS(lang, callback){
+//     console.log(`I'm learning: ${lang}`);
+//     callback();
+// }
 
-function done(){
-    console.log('I finished this learn');
-}
+// function done(){
+//     console.log('I finished this learn');
+// }
 
-learnJS('JavaScript', done);
+// learnJS('JavaScript', done);
 
-const options = {
-    name: 'test',
-    width: 1024,
-    height: 1024,
-    colors: {
-        border: 'black',
-        bg: 'yellow'
-    },
-    makeTest: function(){
-        console.log('Test');
-    }
-};
+// const options = {
+//     name: 'test',
+//     width: 1024,
+//     height: 1024,
+//     colors: {
+//         border: 'black',
+//         bg: 'yellow'
+//     },
+//     makeTest: function(){
+//         console.log('Test');
+//     }
+// };
 
-options.makeTest();
+// options.makeTest();
 
-const {border, bg} = options.colors;
-console.log(border);
+// const {border, bg} = options.colors;
+// console.log(border);
 
-delete options.name;
+// delete options.name;
 
-console.log(options);
+// console.log(options);
 
-let count = 0;
-for (let key in options){
-    if (typeof(options[key]) === 'object'){
-        for (let i in options[key]){
-            console.log(`Свойство ${i} имеет значение ${options[key][i]}`);
-            count++;
-        }
-    } else {
-        console.log(`Свойство ${key} имеет значение ${options[key]}`);  
-        count++;
-    }
-}
-console.log(count);
+// let count = 0;
+// for (let key in options){
+//     if (typeof(options[key]) === 'object'){
+//         for (let i in options[key]){
+//             console.log(`Свойство ${i} имеет значение ${options[key][i]}`);
+//             count++;
+//         }
+//     } else {
+//         console.log(`Свойство ${key} имеет значение ${options[key]}`);  
+//         count++;
+//     }
+// }
+// console.log(count);
 
-console.log(Object.keys(options).length);*/
+// console.log(Object.keys(options).length);
 
 // const arr = [1, 2, 3, 4, 8];
 
@@ -184,14 +113,123 @@ console.log(Object.keys(options).length);*/
 
 // b = b + 5;
 
+/// копии объекта:
+
 // console.log(b);
 // console.log(a);
 
-const obj = {
-    a: 5,
-    b: 1
-};
+// const obj = {
+//     a: 5,
+//     b: 1
+// };
 
-const copy = obj; //передает ссылку
+// const copy = obj; //передает ссылку
 
-copy.a = 10;
+// copy.a = 10;
+
+// function copy(mainObj) {
+//     let objCopy = {};
+
+//     let key;
+//     for( key in mainObj) {
+//         objCopy[key] = mainObj[key];
+//     }
+
+//     return objCopy;
+// }
+
+// const numbers = {
+//     a: 2,
+//     b: 5,
+//     c: {
+//         x: 7,
+//         y: 4
+//     }
+// };
+
+// const newNumbers = copy(numbers);
+
+// newNumbers.a = 10;
+// newNumbers.c.y = 10;
+
+// //console.log(newNumbers);
+
+// const add = {
+//     d: 17,
+//     e: 20
+// };
+
+// //console.log(Object.assign(numbers, add));
+
+// const clone = Object.assign({}, add);//отдельная новая копия объекта
+
+// clone.d = 21;
+
+// console.log(add);
+// console.log(clone);
+
+// ///для поверхностной копии массива: 
+
+// const oldArray = ['a', 'b', 'c'];
+// const newArray = oldArray.slice();
+
+// newArray[1] = 'ehdjkfldd;fd';
+
+// console.log(newArray);
+// console.log(oldArray); 
+
+// const video = ['youtube', 'vimeo', 'rutube'],
+//       blogs = ['wordpress', 'livejournal', 'blogger'],
+//       internet = [...video, ...blogs, 'vk', 'facebook'];
+
+// console.log(internet);
+
+// function lol(a, b, c) {
+//     console.log(a);
+//     console.log(b);
+//     console.log(c);
+// }
+
+// const num = [2, 5, 7];
+
+// lol(...num);
+
+// const array = ['a', 'b'];
+
+// const newAarray = array; //копия
+
+// const q = {
+//     one: 1,
+//     two: 2
+// };
+
+// const newObj = {...q}; //копия объекта
+
+// let str = 'some';
+
+// let atrObj = new String(str); //устаревшее. Копия строки 
+
+// console.dir([1, 2, 3]);
+
+// const soldier = {
+//     health: 400,
+//     armor: 100,
+//     sayHello: function(){
+//         console.log('Hello');
+//     }
+
+// };
+
+// const jonh = Object.create(soldier); // сразу создание объекта, который прототипно наслед.
+
+// const jonh = {
+//     health: 100
+// };
+
+//jonh.__proto__ = soldier;
+
+//Object.setPrototypeOf(jonh, soldier); //то же самое что и выше, только там устаревшая версия (если объект уже создан)
+
+//console.log(jonh.armor);
+
+// jonh.sayHello();
